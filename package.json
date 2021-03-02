@@ -1,0 +1,51 @@
+{
+  "name": "first-api",
+  "version": "1.0.0",
+  "description": "first-api",
+  "main": "index.js",
+ 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deevo-sage/first-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deevo-sage/first-api/issues"
+  },
+   "scripts": {
+    "build": "babel src --out-dir dist",
+    "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
+    "test-routes": "npm run test -t router",
+    "test-models": "npm run test -t model",
+    "test-controllers": "npm run test -t controllers",
+    "test-auth": "npm run test -t Authentication:",
+    "dev": "nodemon --exec npm run restart",
+    "restart": "rimraf dist && npm run build && npm run start",
+    "start": "node dist/index.js"
+  }, 
+  "homepage": "https://github.com/deevo-sage/first-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cuid": "^2.1.8",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.11.18",
+    "morgan": "^1.10.0",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.21.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2"
+  }
+}
